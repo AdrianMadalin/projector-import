@@ -1,0 +1,13 @@
+node_modules
+dist
+api/coverage
+.history
+**/temp/**
+!**/temp/.gitkeep
+!**/temp/tskeep.ts
+# **/public/**
+!/public/**/tskeep.ts
+!/public/**/.gitkeep
+mongodump.dump
+tasks/dbdump/dbdumps/*
+!tasks/dbdump/dbdumps/.gitkeep

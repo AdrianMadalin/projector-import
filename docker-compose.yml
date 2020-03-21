@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  sql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: c)d]V66pVG.&/#YG,)y(Y8u"QF
+      MYSQL_DATABASE: projector-import
+    ports:
+      - "3306:3306"
+    expose:
+      - 3306
+    container_name: anais_sql
+
+  api:
+    build: api
+    volumes:
+      - ./api:/app
+      - ./tasks:/tasks
+    restart: always
+    ports:
+      - "4047:4047"
+    environment:
+      - SERVICE_NAME=API
+      - PORT=4047
+      - MYSQL_ROOT_USER=root
+      - MYSQL_ROOT_PASSWORD=c)d]V66pVG.&/#YG,)y(Y8u"QF
+      - MYSQL_DATABASE=projector-import
+      - MYSQL_PORT=3306
+      - PROJECTOR_FILE_URI=TODO
+    links:
+      - "sql:database"
+
+  config:
+    build: tasks/config
+    volumes:
+      - .:/app

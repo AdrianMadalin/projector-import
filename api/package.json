@@ -1,0 +1,26 @@
+{
+  "name": "projector-import",
+  "version": "1.0.0",
+  "description": "Import projector timesheets",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "this.one"
+  },
+  "keywords": [
+    "node",
+    "mysql"
+  ],
+  "author": "Anais Tech",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^1.8.2",
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.2"
+  }
+}
